@@ -2,34 +2,55 @@ var add = function(number1, number2) {
   return number1 + number2;
 };
 
-var number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
-var result = add(number1, number2);
-alert(result);
-
 var sub = function(number1, number2) {
   return number1 - number2;
 };
 
-var number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
-var result = sub(number1, number2);
-alert(result);
 
 var mult = function(number1, number2) {
   return number1 * number2;
 };
 
-var number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
-var result = mult(number1, number2);
-alert(result);
 
-var div = function(number1, number2) {
+var divide = function(number1, number2) {
   return number1 / number2;
 };
 
-var number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
-var result = div(number1, number2);
-alert(result);
+// $(function(){
+//
+//   $("#calculator").submit(
+//     function(e){
+//       e.preventDefault();
+//       var one = parseInt($("#joe").val());
+//       var two = parseInt($("#bob").val());
+//
+//       $("#output").text(add(one,two));
+//     }
+//   )
+
+$(function(){
+
+  $("#calculator").submit(
+    function(e){
+      var one = parseInt($("#joe").val());
+      var two = parseInt($("#bob").val());
+
+      if ($("select").val() == "add"){
+        var result = add(one,two);
+      }
+      else if ($("select").val() == "subtract"){
+        var result = sub(one,two)
+      }
+      else if ($("select").val() == "multiply"){
+        var result = mult(one,two)
+      }
+      else if ($("select").val() == "divide"){
+        var result = divide(one,two)
+      }
+
+      $("#output").text(result);
+
+      e.preventDefault();
+    }
+  )
+})
