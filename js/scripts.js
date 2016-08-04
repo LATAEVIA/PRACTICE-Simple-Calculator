@@ -16,18 +16,6 @@ var divide = function(number1, number2) {
   return number1 / number2;
 };
 
-// $(function(){
-//
-//   $("#calculator").submit(
-//     function(e){
-//       e.preventDefault();
-//       var one = parseInt($("#joe").val());
-//       var two = parseInt($("#bob").val());
-//
-//       $("#output").text(add(one,two));
-//     }
-//   )
-
 $(function(){
 
   $("#calculator").submit(
